@@ -1,5 +1,11 @@
 Python 3 — Quick Reference
 ==========================
+## Basic
+```py
+a, b, c = 1, 2, 3
+# a = 1, b = 2, c = 3
+```
+
 ## Data type
 
 String
@@ -20,8 +26,8 @@ multiple
 line'''
 # => 'multiple\nline'
 
-', '.join([1, 2, 3, 4])
-# => '1, 2, 3, 4'
+' '.join([1, 2, 3, 4])
+# => '1 2 3 4'
 len('1234')
 # => 4
 
@@ -33,56 +39,69 @@ len('1234')
 # => '1 Foot = 12 Inch, 1 Inch = 2.54 cm'
 ```
 
-List
+Lists
 ```py
-array = [0, 1, 2, 3, 4, 5]
+array = [0, 1, 2, 3, 4]
+
 array[0]
 # => 0
 array[-1]
-# => 5
+# => 4
 array[2:4]
 # => [2, 3]
-array[3:]
-# => [3, 4, 5]
-array[0:4] = ['June']
-# array = ['June', 4, 5]
-del array[2]
-# array = ['June', 4]
-array.append('Incident')
-# array = ['June', 4, 'Incident']
-array.remove('Incident')
-# array = ['June', 4]
-array.extend(['hundreds', 'killed'])
-# array = ['June', 4, 'hundreds', 'killed']
+array[2:]
+# => [2, 3, 4]
+array[:] # shallow copy
+# => [0, 1, 2, 3, 4]
+array.copy() # shallow copy
+# => [0, 1, 2, 3, 4]
+
+array[0:4] = [2, 6] # splice
+# array = [2, 6, 4]
+del array[0] # remove
+# array = [6, 4]
+array.append(8)
+# array = [6, 4, 8]
+array.remove(8)
+# array = [6, 4]
+array.insert(0, 2)
+# array = [2, 6, 4]
+array.extend([8, 10])
+# array = [2, 6, 4, 8, 10]
 array.pop()
-# => 'killed'
-# array = ['June', 4, 'hundreds']
-'June' in array
-# => True
-array.index('hundreds')
-# => 2
-array = [n*2 for n in [6, 5, 4, 3, 2, 1, 0] if n%2 == 0]
+# => 10
+# array = [2, 6, 4, 8]
+
+[n for n in range(4)]
+# => [0, 1, 2, 3]
+array = [n*2 for n in range(8) if n%2 == 0]
+# array = [0, 4, 8, 12]
+array.reverse()
 # array = [12, 8, 4, 0]
 array.sort()
 # array = [0, 4, 8, 12]
+8 in array
+# => True
+array.index(8)
+# => 2
+[1, 2] + [3, 4]
+# => [1, 2, 3, 4]
+[1, 2] * 3
+[1, 2, 1, 2, 1, 2]
 ```
 
-Tuples:
+Tuples
+```py
+(1,2,3)
+(1,)
+()
+```
 
-x = 1,2,3
-x = (1,2,3)
-x[1]
-a,b,c = x
-
-Dictionaries:
-
-D = {'f1': 10, 'f2': 20}              # dict creation
-D = dict(f1=10, f2=20)
-
-keys = ('a', 'b', 'c')
-D = dict.fromkeys(keys)               # new dict with empty values
-
-for k in D: print(k)                  # keys
+Dictionaries
+```py
+d = {'a': 1, 'b': 2}
+dict(a=1, b=2)
+for  in D: print(k)                  # keys
 for v in D.values(): print(v)         # values
 for k, v in D.items():                # tuples with keys and values
 list(D.keys())                        # list of keys
@@ -92,6 +111,7 @@ D = {}
 D[(1,8,5)] = 100                      # 3D sparse matrix
 D.get((1,8,5))
 D.get((1,1,1), -1)
+```
 
 Sets:
 
