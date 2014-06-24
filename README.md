@@ -18,8 +18,9 @@ r'raw \n string'
 
 'A' + 'B'
 # => 'AB'
+
 'AB' * 2
-'ABAB'
+# => 'ABAB'
 
 """multiple
 line"""
@@ -32,13 +33,16 @@ line'''
 
 ','.join([1, 2, 3, 4])
 # => '1,2,3,4'
+
 len('1234')
 # => 4
 
 '%s has %d feet' % ('Chick', 2)
 # => 'Chick has 2 feet'
+
 '{} has {} feet'.format('Chick', 2)
 # => 'Chick has 2 feet'
+
 '1 Foot = {0} {1}, 1 {1} = {2} cm'.format(12, 'Inch', 2.54)
 # => '1 Foot = 12 Inch, 1 Inch = 2.54 cm'
 ```
@@ -158,12 +162,22 @@ set([1, 2, 3, 2, 3, 4])
 # => True
 {1, 2} > {1, 2}
 # => False
+{1, 2, 3}.copy() # shallow copy
+# => {1, 2, 3}
+```
+
+### Frozensets (Immutable Sets)
+```py
+frozenset([1, 2, 3, 2, 3, 4])
+# => frozenset({1, 2, 3, 4})
 ```
 
 ### Dictionaries
 ```py
-d = {'a': 1, 'b': 2}
+{'a': 1, 'b': 2}
 dict(a=1, b=2)
+dict([('a', 1), ('b', 2)])
+# => {'b': 2, 'a': 1}
 for  in D: print(k)                  # keys
 for v in D.values(): print(v)         # values
 for k, v in D.items():                # tuples with keys and values
