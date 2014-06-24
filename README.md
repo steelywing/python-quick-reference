@@ -10,12 +10,16 @@ a, b, c = 1, 2, 3
 
 String
 ```py
-"string\n"
-# => 'string\n'
+"string\n" == 'string\n'
+# => True
 
-# raw
 r'raw \n string'
 # => 'raw \\n string'
+
+'A' + 'B'
+# => 'AB'
+'AB' * 2
+'ABAB'
 
 """multiple
 line"""
@@ -26,8 +30,8 @@ multiple
 line'''
 # => 'multiple\nline'
 
-' '.join([1, 2, 3, 4])
-# => '1 2 3 4'
+','.join([1, 2, 3, 4])
+# => '1,2,3,4'
 len('1234')
 # => 4
 
@@ -41,60 +45,83 @@ len('1234')
 
 Lists
 ```py
-array = [0, 1, 2, 3, 4]
+array = ['A', 'B', 'C', 'D']
 
 array[0]
-# => 0
+# => 'A'
 array[-1]
-# => 4
-array[2:4]
-# => [2, 3]
-array[2:]
-# => [2, 3, 4]
+# => 'D'
+array[1:3] # return #2 (include) to #4 (exclude) items
+# => ['B', 'C']
+array[1:]
+# => ['B', 'C', 'D']
 array[:] # shallow copy
-# => [0, 1, 2, 3, 4]
+# => ['A', 'B', 'C', 'D']
 array.copy() # shallow copy
-# => [0, 1, 2, 3, 4]
+# => ['A', 'B', 'C', 'D']
+'B' in array
+# => True
+array.index('B') # return index of the first match
+# => 1
+['A', 'B'] + ['C', 'D']
+# => ['A', 'B', 'C', 'D']
+['A', 'B'] * 2
+# => ['A', 'B', 'A', 'B']
 
-array[0:4] = [2, 6] # splice
-# array = [2, 6, 4]
+array[0:3] = ['E', 'F'] # splice
+# array = ['E', 'F', 'D']
+array.append('G')
+# array = ['E', 'F', 'D', 'G']
+array.insert(1, 'H')
+# array = ['E', 'H', 'F', 'D', 'G']
 del array[0] # remove
-# array = [6, 4]
-array.append(8)
-# array = [6, 4, 8]
-array.remove(8)
-# array = [6, 4]
-array.insert(0, 2)
-# array = [2, 6, 4]
-array.extend([8, 10])
-# array = [2, 6, 4, 8, 10]
+# array = ['H', 'F', 'D', 'G']
+del array[1:3] # remove
+# array = ['H', 'G']
+array.extend(['H', 'I'])
+# array = ['H', 'G', 'H', 'I']
+array.remove('H') # remove first matching item
+# array = ['G', 'H', 'I']
 array.pop()
-# => 10
-# array = [2, 6, 4, 8]
+# => 'I', array = ['G', 'H']
+
+array = [6, 4, 8, 2]
+array.sort()
+# array = [2, 4, 6, 8]
+array.reverse()
+# array = [8, 6, 4, 2]
 
 [n for n in range(4)]
 # => [0, 1, 2, 3]
-array = [n*2 for n in range(8) if n%2 == 0]
-# array = [0, 4, 8, 12]
-array.reverse()
-# array = [12, 8, 4, 0]
-array.sort()
-# array = [0, 4, 8, 12]
-8 in array
-# => True
-array.index(8)
-# => 2
-[1, 2] + [3, 4]
-# => [1, 2, 3, 4]
-[1, 2] * 3
-[1, 2, 1, 2, 1, 2]
 ```
 
-Tuples
+List Comprehensions
 ```py
-(1,2,3)
+array = [n*2 for n in range(8) if n%2 == 0]
+# array = [0, 4, 8, 12]
+```
+is same as
+```py
+array = []
+for n in range(8):
+    if n%2 == 0:
+        array.append(n*2)
+```
+
+Tuples (Immutable Lists)
+```py
+(1, 2, 3)
 (1,)
 ()
+```
+
+Sets
+```py
+{1, 2, 3}
+set([1, 2, 3, 2, 3, 4])
+# => {1, 2, 3, 4}
+'A' in {'A', 'B', 'C'}:
+S1+S2, S1-S2, S1^S2, S1|S2
 ```
 
 Dictionaries
@@ -112,14 +139,6 @@ D[(1,8,5)] = 100                      # 3D sparse matrix
 D.get((1,8,5))
 D.get((1,1,1), -1)
 ```
-
-Sets:
-
-S = {1,3,5}
-L = [1, 3, 1, 5, 3]
-S = set(L)                            # set([1, 3, 5])
-if (3 in S):
-S1+S2, S1-S2, S1^S2, S1|S2
 
 See also https://docs.python.org/3.4/library/stdtypes.html.
 Loops
