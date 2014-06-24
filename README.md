@@ -8,7 +8,7 @@ a, b, c = 1, 2, 3
 
 ## Data type
 
-String
+### String
 ```py
 "string\n" == 'string\n'
 # => True
@@ -43,10 +43,12 @@ len('1234')
 # => '1 Foot = 12 Inch, 1 Inch = 2.54 cm'
 ```
 
-Lists
+### Lists
 ```py
 array = ['A', 'B', 'C', 'D']
 
+len(array)
+# => 4
 array[0]
 # => 'A'
 array[-1]
@@ -60,6 +62,8 @@ array[:] # shallow copy
 array.copy() # shallow copy
 # => ['A', 'B', 'C', 'D']
 'B' in array
+# => True
+'E' not in array
 # => True
 array.index('B') # return index of the first match
 # => 1
@@ -95,7 +99,7 @@ array.reverse()
 # => [0, 1, 2, 3]
 ```
 
-List Comprehensions
+### List Comprehensions
 ```py
 array = [n*2 for n in range(8) if n%2 == 0]
 # array = [0, 4, 8, 12]
@@ -108,23 +112,55 @@ for n in range(8):
         array.append(n*2)
 ```
 
-Tuples (Immutable Lists)
+### Tuples (Immutable Lists)
 ```py
 (1, 2, 3)
 (1,)
 ()
 ```
 
-Sets
+### Sets
 ```py
 {1, 2, 3}
 set([1, 2, 3, 2, 3, 4])
 # => {1, 2, 3, 4}
-'A' in {'A', 'B', 'C'}:
-S1+S2, S1-S2, S1^S2, S1|S2
+'A' in {'A', 'B', 'C'}
+# => True
+'D' not in {'A', 'B', 'C'}
+# => True
+{1, 2} | {2, 3}
+{1, 2}.union({2, 3})
+# => {1, 2, 3}
+{1, 2} & {2, 3}
+{1, 2}.intersection({2, 3})
+# => {2}
+{1, 2} - {2, 3}
+{1, 2}.difference({2, 3})
+# => {1}
+{1, 2} ^ {2, 3}
+{1, 2}.symmetric_difference({2, 3})
+# => {1, 3}
+{1, 2}.isdisjoint({3, 4}) # no common elements
+# => True
+{1, 2} <= {1, 2}
+{1, 2} <= {1, 2, 3}
+{1, 2}.issubset({1, 2, 3})
+# => True
+{1, 2} < {1, 2, 3}
+# => True
+{1, 2} < {1, 2}
+# => False
+{1, 2} >= {1, 2}
+{1, 2, 3} >= {1, 2}
+{1, 2, 3}.issuperset({1, 2})
+# => True
+{1, 2, 3} > {1, 2}
+# => True
+{1, 2} > {1, 2}
+# => False
 ```
 
-Dictionaries
+### Dictionaries
 ```py
 d = {'a': 1, 'b': 2}
 dict(a=1, b=2)
