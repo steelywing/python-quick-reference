@@ -1,9 +1,8 @@
 name: Herring Cove
 author: Herring Cove
-baseurl: /python-quick-reference
 markdown: redcarpet
 pygments: true
-baseurl: /herring-cove
+baseurl: /python-quick-reference
 description: theme for jekyll
 github: http://www.github.com/arnp
 twitter: http://www.twitter.com/
