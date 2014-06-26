@@ -1,5 +1,6 @@
 ---
 layout: article
+weight: 2
 ---
   <div id="article">
    <div class="article-title">{{ page.title }}</div>
@@ -15,10 +16,10 @@ layout: article
 
  <ul class="pager">
   {% if page.previous %}
-  <li class="previous"><a href="{{ page.previous.url }}">&larr; Older</a></li>
+  <li class="previous"><a href="{{ site.baseurl }}{{ page.previous.url }}">&larr; Older</a></li>
   {% endif %}
   {% if page.next %}
-  <li class="next"><a href="{{ page.next.url }}">Newer &rarr;</a></li>
+  <li class="next"><a href="{{ site.baseurl }}{{ page.next.url }}">Newer &rarr;</a></li>
   {% endif %}
 
 </ul>
