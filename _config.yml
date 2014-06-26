@@ -1,5 +1,6 @@
 name: Herring Cove
 author: Herring Cove
+baseurl: /python-quick-reference
 markdown: redcarpet
 pygments: true
 baseurl: /herring-cove
