@@ -1,0 +1,36 @@
+body {
+    /* padding-top: 50px; */
+}
+
+header .navbar {
+    margin: 0;
+}
+
+header .navbar-inverse {
+    background-color: #45355f;
+}
+
+header .navbar-inverse .navbar-brand,
+header .navbar-inverse .navbar-nav > li > a {
+    color: #ebdfff;
+}
+
+footer {
+    padding: 1em;
+}
+
+.jumbotron {
+    background-color: #6f5499;
+    color: #fff;
+}
+
+.affix {
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .affix {
+        position: fixed;
+        top: 20px;
+    }
+}

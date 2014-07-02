@@ -1,16 +1,16 @@
-name: Herring Cove
-author: Herring Cove
+# Site settings
+title: Python 3 Quick Reference
+# email: your-email@domain.com
+description: "A python quick reference."
+baseurl: "/python-quick-reference"
+url: "http://steelywing.github.io"
+
+# Build settings
 markdown: kramdown
 highlighter: rouge
-baseurl: /python-quick-reference
-description: theme for jekyll
-github: https://github.com/SteelyWing/python-quick-reference
-# twitter: http://www.twitter.com/
-# facebook: http://www.facebook.com
-# linkedin: http://www.linkedin.com
-# email: rnpatel[at]me.com
-# location: 42°2'16"N   70°12'47"W
-disqus: diqus-username
-
-##Make sure to edit the above fields, especially for disqus.
-
+permalink: pretty
+kramdown:
+  use_coderay: true
+  coderay:
+    coderay_line_numbers: ~
+    coderay_css: class

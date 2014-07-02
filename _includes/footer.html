@@ -1,11 +1,41 @@
-    <footer>
-       <p class="text-muted credit">&copy; {{ site.time | date: '%Y' }} {{ site.name }} &middot; <a href="https://github.com/arnp/herring-cove"> Herring Cove for Jekyll </a>{{ site.time }}  </p>
-    </footer>
- <!-- Bootstrap core JavaScript-->
-    <script src="{{ site.baseurl }}/js/jquery-1.10.2.min.js"></script>
-    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
-    <script src="{{ site.baseurl }}/js/bootstrap.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/js/hc.js"></script>
-</body>
+<footer>
+  <hr>
 
-</html>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8">
+        <h4>{{ site.title }}</h4>
+        <p>{{ site.description }}</p>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+
+      <div class="col-md-4">
+        <ul class="nav nav-pills nav-stacked">
+          {% if site.twitter %}
+            <li><a href="{{ site.twitter }}">
+              <i class="fa fa-twitter-square"></i> @twitter
+            </a></li>
+          {% endif %}
+          {% if site.linkedin %}
+            <li><a href="{{ site.linkedin }}">
+              <i class="fa fa-linkedin-square"></i> linkedin
+            </a></li>
+          {% endif %}
+          {% if site.facebook %}
+            <li><a href="{{ site.facebook }}">
+              <i class="fa fa-facebook-square"></i> facebook
+            </a></li>
+          {% endif %}
+          {% if site.github %}
+            <li><a href="{{ site.github }}">
+              <i class="fa fa-github-square"></i> github
+            </a></li>
+          {% endif %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</footer>

@@ -1,74 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ site.description }}">
-    <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/css/hc.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/css/monokai.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]--></head>
-<body>
-<div class="nav-toggle">
-    <i class="fa fa-bars fa-2x"></i> Herring Cove
-</div>
-<div id="wrapper">
-    <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <p class="navbar-brand">{{ site.name }}</p>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ site.baseurl }}/list.html">List</a></li>
-                    <li><a href="{{ site.baseurl }}/links.html">Links</a></li>
-                    <li><a href="{{ site.baseurl }}/projects.html">Projects</a></li>
-                    <li><a href="{{ site.baseurl }}/about.html">About</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </div>
+<header>
 
-
-
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand"><a href="{{ site.baseurl }}/"><h1 class="brand">{{ site.name }}</h1></a><h3>{{ site.description }}</h3></li>
-            <hr />
-            {% for weight in (1..10) %}
-                {% for page in site.pages %}
-                    {% if weight == page.weight %}
-                        <li><a href="{{ site.baseurl }}{{ page.url }}">
-                            {{ page.title }}
-                        </a></li>
-                    {% endif %}
-                {% endfor %}
-            {% endfor %}
-            <hr />
-            <div id="social-wrapper">
-                {% if site.twitter %}<li> <a href="{{ site.twitter }}"><i class="fa fa-twitter-square"></i> @twitter</a></li>{% endif %}
-                <li> <a href="{{ site.linkedin }}"><i class="fa fa-linkedin-square"></i> linkedin</a> </li>
-                <li> <a href="{{ site.facebook }}"><i class="fa fa-facebook-square"></i> facebook</a></li>
-                <li> <a href="{{ site.github }}"><i class="fa fa-github-square"></i> github</a> </li>
-            </div>
-        </ul>
-    </div>
-
-
-
+  <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="icon-bar"></i>
+          <i class="icon-bar"></i>
+          <i class="icon-bar"></i>
+        </button>
+        <a class="navbar-brand" href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a>
+      </div>
 
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          {% for weight in (0..9) %}
+            {% for page in site.pages %}
+              {% if weight == page.weight %}
+                <li>
+                  <a href="{{ page.url | prepend: site.baseurl }}">
+                    {{ page.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="jumbotron">
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+  
+</header>
