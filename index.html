@@ -1,19 +1,19 @@
 ---
 layout: default
+title: Python 3 Quick Reference
 ---
-<div class="home">
-
-  <h1>Posts</h1>
-
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      {% for weight in (0..9) %}
+        {% for page in site.pages %}
+          {% if weight == page.weight %}
+            <a href="{{ page.url | prepend: site.baseurl }}">
+              <h4>{{ page.title }}</h4>
+            </a>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
 </div>

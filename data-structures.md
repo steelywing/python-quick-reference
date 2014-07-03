@@ -1,14 +1,11 @@
 ---
 layout: page
-title: Data Type
-permalink: /data-type/
+title: Data Structures
+permalink: /data-structures/
 weight: 1
-# links:
-  # - text: Numbers
-    # link: '#numbers'
 ---
 ## Numbers
-~~~ python
+``` python
 1 + 1
 # => 2
 
@@ -36,10 +33,10 @@ int(1.2)
 
 float(1)
 # => 1.0
-~~~
+```
 
 ## Strings
-~~~ python
+``` python
 "string\n" == 'string\n'
 # => True
 
@@ -75,10 +72,10 @@ len('1234')
 
 '1 Foot = {0} {1}, 1 {1} = {2} cm'.format(12, 'Inch', 2.54)
 # => '1 Foot = 12 Inch, 1 Inch = 2.54 cm'
-~~~
+```
 
 ## Lists
-~~~ python
+``` python
 array = ['A', 'B', 'C', 'D']
 
 len(array)
@@ -157,38 +154,38 @@ for i, v in enumerate(['A', 'B', 'C']):
 # 0 A
 # 1 B
 # 2 C
-~~~
+```
 
 ## List Comprehensions
-~~~ python
+``` python
 [n for n in range(4)]
 # => [0, 1, 2, 3]
-~~~
+```
 
-~~~ python
+``` python
 array = [n*2 for n in range(8) if n%2 == 0]
 # array = [0, 4, 8, 12]
-~~~
+```
 
 is same as
 
-~~~ python
+``` python
 array = []
 for n in range(8):
     if n%2 == 0:
         array.append(n*2)
-~~~
+```
 
 ## Tuples (Immutable Lists)
-~~~ python
+``` python
 tuple([1, 2, 3])
 (1, 2, 3)
 (1,)
 ()
-~~~
+```
 
 ## Sets
-~~~ python
+``` python
 {1, 2, 3, 4}
 set([1, 2, 3, 2, 3, 4])
 # => {1, 2, 3, 4}
@@ -242,16 +239,16 @@ set([1, 2, 3, 2, 3, 4])
 
 {1, 2, 3}.copy() # shallow copy
 # => {1, 2, 3}
-~~~
+```
 
 ## Frozensets (Immutable Sets)
-~~~ python
+``` python
 frozenset([1, 2, 3, 2, 3, 4])
 # => frozenset({1, 2, 3, 4})
-~~~
+```
 
 ## Dictionaries
-~~~ python
+``` python
 {'a': 1, 'b': 2}
 dict(a=1, b=2)
 dict([('a', 1), ('b', 2)])
@@ -289,4 +286,4 @@ for key in sorted(dictionary.keys()):
 
 {x: x**2 for x in range(4)}
 # => {0: 0, 1: 1, 2: 4, 3: 9}
-~~~
+```

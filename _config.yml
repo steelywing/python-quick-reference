@@ -1,16 +1,13 @@
 # Site settings
-title: Python 3 Quick Reference
+title: Python 3
 # email: your-email@domain.com
 description: "A python quick reference."
 baseurl: "/python-quick-reference"
 url: "http://steelywing.github.io"
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 highlighter: rouge
 permalink: pretty
-kramdown:
-  use_coderay: true
-  coderay:
-    coderay_line_numbers: ~
-    coderay_css: class
+redcarpet:
+  extensions: [with_toc_data]
