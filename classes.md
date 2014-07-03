@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Classes
-permalink: /classes/
+# permalink: /classes/
 weight: 1
 ---
 ### Classes

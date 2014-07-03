@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Basic
-permalink: /basic/
+# permalink: /basic/
 weight: 1
 # links:
   # - text: Numbers

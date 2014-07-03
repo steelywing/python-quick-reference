@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Data Structures
-permalink: /data-structures/
+# permalink: /data-structures/
 weight: 1
 ---
 ## Numbers

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Control Flow
-permalink: /control-flow/
+# permalink: /control-flow/
 weight: 1
 ---
 ## if
@@ -87,11 +87,11 @@ foo(*args, **kw_args) # unpacking arguments
 
 ## Function Annotations
 ``` python
-def foobar(arg: 'argument annotation', kw_arg: 'keyword argument annotation' = 'default') -> 'Annotation':
+def foo(arg: 'argument', kw_arg: 'keyword argument' = 'default') -> 'return annotation':
     pass
 
-foobar.__annotations__
-# => {'arg': 'argument annotation', 'kw_arg': 'keyword argument annotation', 'return': 'Annotation'}
+foo.__annotations__
+# => {'arg': 'argument', 'kw_arg': 'keyword argument', 'return': 'return annotation'}
 ```
 
 ## lambda

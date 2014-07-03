@@ -8,6 +8,6 @@ url: "http://steelywing.github.io"
 # Build settings
 markdown: redcarpet
 highlighter: rouge
-permalink: pretty
+# permalink: pretty
 redcarpet:
   extensions: [with_toc_data]
