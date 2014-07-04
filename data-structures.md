@@ -6,48 +6,28 @@ weight: 1
 ---
 ## Numbers
 ``` python
-1 + 1
-# => 2
-
-2 - 1
-# => 1
-
-2 * 2
-# => 4
-
-3 / 2 # division
-# => 1.5
-
-3 // 2 # floor division
-# => 1
-
-3 % 2 # remainder of division
-# => 1
-
-4 ** 2 # power
-pow(4, 2)
-# => 16
-
-int(1.2)
-# => 1
-
-float(1)
-# => 1.0
+1 + 1       # => 2
+2 - 1       # => 1
+2 * 2       # => 4
+# division
+3 / 2       # => 1.5
+# floor division
+5 // 2      # => 2
+# remainder of division
+5 % 2       # => 1
+# power
+4 ** 2      # => 16
+pow(4, 2)   # => 16
+int(1.2)    # => 1
+float(1)    # => 1.0
 ```
 
 ## Strings
 ``` python
-"string\n" == 'string\n'
-# => True
-
-r'raw \n string'
-# => 'raw \\n string'
-
-'A' + 'B'
-# => 'AB'
-
-'AB' * 2
-# => 'ABAB'
+"string\n" == 'string\n'    # => True
+r'raw \n string'            # => 'raw \\n string'
+'A' + 'B'                   # => 'AB'
+'AB' * 2                    # => 'ABAB'
 
 """multiple
 line"""
@@ -78,82 +58,36 @@ len('1234')
 ``` python
 array = ['A', 'B', 'C', 'D']
 
-len(array)
-# => 4
+len(array)          # => 4
+array[0]            # => 'A'
+array[-1]           # => 'D'
+array[1:3]          # => ['B', 'C'] (slice #1 (include) to #3 (exclude) items)
+array[1:]           # => ['B', 'C', 'D']
+array[:]            # => ['A', 'B', 'C', 'D'] (shallow copy)
+array.copy()        # => ['A', 'B', 'C', 'D'] (shallow copy)
+'B' in array        # => True
+'E' not in array    # => True
+array.index('B')    # => 1 (return index of the first match)
 
-array[0]
-# => 'A'
-
-array[-1]
-# => 'D'
-
-array[1:3] # return #2 (include) to #4 (exclude) items
-# => ['B', 'C']
-
-array[1:]
-# => ['B', 'C', 'D']
-
-array[:] # shallow copy
-# => ['A', 'B', 'C', 'D']
-
-array.copy() # shallow copy
-# => ['A', 'B', 'C', 'D']
-
-'B' in array
-# => True
-
-'E' not in array
-# => True
-
-array.index('B') # return index of the first match
-# => 1
-
-['A', 'B'] + ['C', 'D']
-# => ['A', 'B', 'C', 'D']
-
-['A', 'B'] * 2
-# => ['A', 'B', 'A', 'B']
-
-array[0:3] = ['E', 'F'] # splice
-# array = ['E', 'F', 'D']
-
-array.append('G')
-# array = ['E', 'F', 'D', 'G']
-
-array.insert(1, 'H')
-# array = ['E', 'H', 'F', 'D', 'G']
-
-del array[0] # remove
-# array = ['H', 'F', 'D', 'G']
-
-del array[1:3] # remove
-# array = ['H', 'G']
-
-array.extend(['H', 'I'])
-# array = ['H', 'G', 'H', 'I']
-
-array.remove('H') # remove first matching item
-# array = ['G', 'H', 'I']
-
-array.pop()
-# => 'I', array = ['G', 'H']
+['A', 'B'] + ['C', 'D']     # => ['A', 'B', 'C', 'D']
+['A', 'B'] * 2              # => ['A', 'B', 'A', 'B']
+array[0:3] = ['E', 'F']     # array = ['E', 'F', 'D'] (splice)
+array.append('G')           # array = ['E', 'F', 'D', 'G']
+array.insert(1, 'H')        # array = ['E', 'H', 'F', 'D', 'G']
+del array[0]                # array = ['H', 'F', 'D', 'G'] (remove)
+del array[1:3]              # array = ['H', 'G']
+array.extend(['H', 'I'])    # array = ['H', 'G', 'H', 'I']
+array.remove('H')           # array = ['G', 'H', 'I'] (remove first matching item)
+array.pop()                 # => 'I', array = ['G', 'H']
 
 array = [6, 4, 8, 2]
-
-array.sort()
-# array = [2, 4, 6, 8]
-
-array.reverse()
-# array = [8, 6, 4, 2]
-
-list(enumerate(['A', 'B', 'C']))
-# => [(0, 'A'), (1, 'B'), (2, 'C')]
+array.sort()                        # array = [2, 4, 6, 8]
+array.reverse()                     # array = [8, 6, 4, 2]
+list(enumerate(['A', 'B', 'C']))    # => [(0, 'A'), (1, 'B'), (2, 'C')]
 
 for i, v in enumerate(['A', 'B', 'C']):
-	print(i, v)
-# 0 A
-# 1 B
-# 2 C
+	print(i, v, end=', ')
+# 0 A, 1 B, 2 C, 
 ```
 
 ## List Comprehensions
@@ -174,6 +108,7 @@ array = []
 for n in range(8):
     if n%2 == 0:
         array.append(n*2)
+# array = [0, 4, 8, 12]
 ```
 
 ## Tuples (Immutable Lists)
