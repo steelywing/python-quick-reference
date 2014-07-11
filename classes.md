@@ -29,6 +29,7 @@ class Foo(BaseClass):
     def __init__(self, data=None):
         """Initialize method"""
         
+        # Init base class
         super().__init__()
         
         # Public instance attribute 
@@ -72,7 +73,7 @@ foobar = Foo('FooBar')
     foobar._Foo__data ==
     foobar.get_data()
 ) # True
-```
 
 foobar._Foo__set_data('New Data')
 foobar.data # => 'New Data'
+```

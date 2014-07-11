@@ -37,7 +37,7 @@ $(function () {
     resize_side_nav();
     
     /*
-     * append side nav items
+     * create side nav items
      */
     $('#content').find('h2, h3, h4').each(function () {
         var $nav = $side_nav.find('.nav'),
