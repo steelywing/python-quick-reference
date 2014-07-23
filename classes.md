@@ -4,7 +4,7 @@ title: Classes
 # permalink: /classes/
 weight: 1
 ---
-### Classes
+### Attributes and methods
 ``` python
 class BaseClass:
 	pass
@@ -60,4 +60,25 @@ foo._data               # => 'Non-public instance attribute = FooBar'
 foo._get_data()         # => 'Non-public instance attribute = FooBar'
 foo._Foo__data          # => 'Private instance attribute = FooBar'
 foo._Foo__get_data()    # => 'Private instance attribute = FooBar'
+```
+
+### Descriptors
+``` python
+class SquareArea:
+    def __get__(self, instance, owner):
+        if not hasattr(instance, 'width') or instance.width is None:
+            return None
+        return instance.width ** 2
+    def __set__(self, instance, value):
+        instance.width = value ** 0.5
+
+class Square:
+    area = SquareArea()
+    def __init__(self, width=None):
+        self.width = width
+
+square = Square(4)
+square.area     # => 16
+square.area = 9
+square.width    # => 3.0
 ```
