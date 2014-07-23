@@ -12,19 +12,14 @@ class BaseClass:
 class Foo(BaseClass):
     """Class Documentation"""
     
-    # Public class attribute
-    # Count of instances
-    count = 0
-    
-    # Non-public class attribute
-    _count = 0
-    
-    # Private class attribute
-    __count = 0
+    class_attr = 'Public class attribute'
+    _class_attr = 'Non-public class attribute'
+    __class_attr = 'Private class attribute'
     
     @classmethod
-    def get_count(cls):
-        return cls.count
+    def get_class_attr(cls):
+        """Public class method"""
+        return 'class_attr = ' + cls.class_attr
     
     def __init__(self, data=None):
         """Initialize method"""
@@ -32,48 +27,37 @@ class Foo(BaseClass):
         # Init base class
         super().__init__()
         
-        # Public instance attribute 
-        self.data = data
+        if data is not None:
+            self.set_data(data)
         
-        # Non-public instance attribute
-        self._data = data
-        
-        # Private instance attribute
-        self.__data = data
-
-        self.__class__.count += 1
-        self.__class__.__count = self.__class__._count = self.__class__.count
+    def set_data(self, data):
+        """Public instance method"""
+        self.data = 'Public instance attribute = ' + str(data)
+        self._data = 'Non-public instance attribute = ' + str(data)
+        self.__data = 'Private instance attribute = ' + str(data)
     
-    # Public instance method
     def get_data(self):
-        """Instance method"""
-        return self.__data
+        """Public instance method"""
+        return self.data
     
-    # Private instance method
-    def __set_data(self, data):
-        """Instance method"""
-        self.__data = self._date = self.data = data
+    def _get_data(self):
+        """Non-public instance method"""
+        return self._data
+    
+    def __get_data(self):
+        """Private Instance method"""
+        return self.__data
 
-# Create instance
-foobar = Foo('FooBar')
+Foo.class_attr          # => 'Public class attribute'
+Foo._class_attr         # => 'Non-public class attribute'
+Foo._Foo__class_attr    # => 'Private class attribute'
+Foo.get_class_attr()    # => 'class_attr = Public class attribute'
 
-(
-    1 ==
-    Foo.count == 
-    Foo._count ==
-    Foo._Foo__count ==
-    Foo.get_count() == 
-    foobar.get_count()
-) # True
-
-(
-    'FooBar' ==
-    foobar.data ==
-    foobar._data ==
-    foobar._Foo__data ==
-    foobar.get_data()
-) # True
-
-foobar._Foo__set_data('New Data')
-foobar.data # => 'New Data'
+foo = Foo('FooBar')     # Create instance
+foo.data                # => 'Public instance attribute = FooBar'
+foo.get_data()          # => 'Public instance attribute = FooBar'
+foo._data               # => 'Non-public instance attribute = FooBar'
+foo._get_data()         # => 'Non-public instance attribute = FooBar'
+foo._Foo__data          # => 'Private instance attribute = FooBar'
+foo._Foo__get_data()    # => 'Private instance attribute = FooBar'
 ```
