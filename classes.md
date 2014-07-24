@@ -71,6 +71,8 @@ class SquareArea:
         return instance.width ** 2
     def __set__(self, instance, value):
         instance.width = value ** 0.5
+    def __delete__(self, instance):
+        instance.width = None
 
 class Square:
     area = SquareArea()
@@ -81,4 +83,63 @@ square = Square(4)
 square.area     # => 16
 square.area = 9
 square.width    # => 3.0
+```
+
+### Getter, Setter and Deleter
+``` python
+class Foo:
+    def __init__(self, data=None):
+        self._data = data
+    
+    # Getter
+    @property
+    def data(self):
+        """Property"""
+        return self._data
+    
+    # Setter
+    @data.setter
+    def data(self, data):
+        self._data = data
+    
+    # Deleter
+    @data.deleter
+    def data(self):
+        del self._data
+
+# is same as
+
+class Foo:
+    def __init__(self, data=None):
+        self._data = data
+    
+    # Getter
+    def get_data(self):
+        """Property"""
+        return self._data
+    
+    # Setter
+    def set_data(self, data):
+        self._data = data
+    
+    # Deleter
+    def del_data(self):
+        del self._data
+    
+    data = property(get_data, set_data, del_data, 'Property')
+
+foo = Foo()
+foo.data = 'FooBar'     # foo._data => 'FooBar'
+foo.data                # => 'FooBar'
+del foo.data            # '_data' not in foo => true
+
+# Read-only property
+
+class Foo:
+    def __init__(self, data=None):
+        self._data = data
+    
+    @property
+    def data(self):
+        return self._data
 ```
