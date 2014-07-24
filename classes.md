@@ -115,7 +115,6 @@ class Foo:
     
     # Getter
     def get_data(self):
-        """Property"""
         return self._data
     
     # Setter
