@@ -106,9 +106,11 @@ class Foo:
     @data.deleter
     def data(self):
         del self._data
+```
 
-# is same as
+is same as
 
+``` python
 class Foo:
     def __init__(self, data=None):
         self._data = data
@@ -126,14 +128,18 @@ class Foo:
         del self._data
     
     data = property(get_data, set_data, del_data, 'Property')
+```
 
+``` python
 foo = Foo()
 foo.data = 'FooBar'     # foo._data => 'FooBar'
 foo.data                # => 'FooBar'
 del foo.data            # '_data' not in foo => true
+```
 
-# Read-only property
+Read-only property
 
+``` python
 class Foo:
     def __init__(self, data=None):
         self._data = data
