@@ -161,7 +161,7 @@ Encoding:
 #!/usr/bin/python3
 # -*- coding: latin-2 -*-
 
-Windows ¡X use .pyw extension to run the script (with GUI) without a console window.
+Windows - use .pyw extension to run the script (with GUI) without a console window.
 
 Paths:
 
