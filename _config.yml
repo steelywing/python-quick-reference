@@ -10,4 +10,4 @@ markdown: redcarpet
 highlighter: rouge
 # permalink: pretty
 redcarpet:
-  extensions: [with_toc_data]
+  extensions: [with_toc_data, tables]

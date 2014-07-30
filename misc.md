@@ -5,26 +5,32 @@ title: Misc
 weight: 8
 ---
 # File
--------------------------------------------------------------
-r   | reading (default)
-w   | writing (truncating)
-r+  | reading and writing
-t   | text (default)
-b   | binary
-x   | exclusive creation, failing if the file already exists
--------------------------------------------------------------
+
+<div class="table">
+
+Mode  | Description
+----- | ---------------------------------------------------------
+r     | reading (default)
+w     | writing (truncating)
+r+    | reading and writing
+t     | text (default)
+b     | binary
+x     | exclusive creation, failing if the file already exists
+
+</div>
 
 ``` python
 with open('filename.txt', 'w') as f:
     f.write('File Content')
 ```
 is same as
-```
+``` python
 f = open('filename.txt', 'w')
 try:
     f.write("File Content")
 finally:
     f.close()
+```
 
 for line in open("test.txt"): print(line, end="")
 
