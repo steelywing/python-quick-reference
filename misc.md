@@ -1,20 +1,34 @@
+---
+layout: page
+title: Misc
+# permalink: /misc/
+weight: 8
+---
+# File
+-------------------------------------------------------------
+r   | reading (default)
+w   | writing (truncating)
+r+  | reading and writing
+t   | text (default)
+b   | binary
+x   | exclusive creation, failing if the file already exists
+-------------------------------------------------------------
 
-Input/output
-
-Printing:
-
-str(x)                                # human readable representation
-repr(x)                               # interpretable representation
-
-File access:
-
-f = open("test.txt", "w")             # r / r+ / rb / rb+ / w / wb
-f.write("Ala ma kota\n")
-f.close()
+``` python
+with open('filename.txt', 'w') as f:
+    f.write('File Content')
+```
+is same as
+```
+f = open('filename.txt', 'w')
+try:
+    f.write("File Content")
+finally:
+    f.close()
 
 for line in open("test.txt"): print(line, end="")
 
-L = open("test.txt").readlines()      # returns a list of lines
+L = open("test.txt").readlines()    # returns a list of lines
 
 Exclusive access:
 

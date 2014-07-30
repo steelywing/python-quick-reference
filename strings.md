@@ -26,6 +26,11 @@ line'''
 len('1234')
 # => 4
 
+# string version of object
+str(1234)   # => '1234'
+# representation of an object
+repr(1234)  # => '1234'
+
 '%s has %d feet' % ('Chick', 2)
 # => 'Chick has 2 feet'
 

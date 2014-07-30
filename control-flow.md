@@ -85,7 +85,7 @@ foo(*args, **kw_args) # unpacking arguments
 # => ('arg', 'kw_arg', ('arbitrary', 'argument'), {'a': 1, 'b': 2})
 ```
 
-## Function Annotations
+Function Annotations
 ``` python
 def foo(arg: 'argument', kw_arg: 'keyword argument' = 'default') -> 'return annotation':
     pass
