@@ -4,58 +4,61 @@ title: Misc
 # permalink: /misc/
 weight: 8
 ---
-# File
-
-<div class="table">
-
-Mode  | Description
------ | ---------------------------------------------------------
-r     | reading (default)
-w     | writing (truncating)
-r+    | reading and writing
-t     | text (default)
-b     | binary
-x     | exclusive creation, failing if the file already exists
-
-</div>
+## Execute shell command
 
 ``` python
-with open('filename.txt', 'w') as f:
+from subprocess import call
+call(['dir', '/w'], shell=True)
+```
+
+## File
+``` python
+# r     reading (default)
+# w     writing (truncating)
+# r+    reading and writing
+# t     text (default)
+# b     binary
+# x     exclusive creation, failing if the file already exists
+
+with open('file.txt', 'w') as f:
     f.write('File Content')
 ```
 is same as
 ``` python
-f = open('filename.txt', 'w')
+f = open('file.txt', 'w')
 try:
     f.write("File Content")
 finally:
     f.close()
 ```
 
-for line in open("test.txt"): print(line, end="")
+``` python
+with open('file.txt') as f:
+    for line in f:
+        print(line)
 
-L = open("test.txt").readlines()    # returns a list of lines
+open('file.txt').readlines()
+```
 
-Exclusive access:
+## Input
+``` python
+name = input("Name: ")
+print('Hello {} !'.format(name))
+```
 
-f = os.fdopen(os.open("test.txt", os.O_WRONLY|os.O_EXCL), "w")
-
-Input:
-
-x = raw_input("Name: ")
-for line in sys.stdin: print(line)
-
-String buffers:
-
+## String buffers
+``` python
 from StringIO import StringIO
 buf = StringIO()
 sys.stdout = buf
 print("Hello")
 x = buf.getvalue()
+```
 
-Error stream:
-
-print("Error!", file=sys.stderr, flush=True)
+## Error output stream
+``` python
+print('Error', file=sys.stderr)
+```
 
 Other file operations:
 
@@ -74,20 +77,20 @@ if __name__ == "__main__":
 
 Exceptions
 
+import sys
+
 try:
-    raise TypeError("arg")
-except (RuntimeError, NameError):
-    pass                              # empty instruction (NOP)
+    raise Exception('Exception Description')
 except:
     info = sys.exc_info()
     print(info[0])
     print(info[1])
     traceback.print_tb(info[2])
-    raise
+    raise                           # re-raise error            
 else:
-    ...                               # no exception but before finally
-finally:                              # on the way out
-    ...                               # unhandled exc, release resources
+    pass
+finally:
+    pass
 
 Object-oriented programming
 
