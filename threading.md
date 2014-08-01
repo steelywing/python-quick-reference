@@ -16,6 +16,13 @@ def timer(name, times, interval=1):
 
 threading.Thread(target=timer, args=('A', 2)).start()
 threading.Thread(target=timer, args=('B', 4)).start()
+
+# A 0
+# B 0
+# A 1
+# B 1
+# B 2
+# B 3
 ```
 
 ## Thread (daemon)
@@ -87,10 +94,10 @@ import threading
 import time
 
 class Timer(threading.Thread):
-    def __init__(self, id, semaphore, interval=1):
+    semaphore = None
+    def __init__(self, id, interval=1):
         super().__init__(name='T' + str(id))
         self.id = id
-        self.semaphore = semaphore
         self.interval = interval
         self.end = False
     def run(self):
@@ -99,12 +106,12 @@ class Timer(threading.Thread):
                 time.sleep(self.interval)
                 print('{:>{}}'.format(self.name, self.id * 4))
 
-# max 2 threads run parallel
-semaphore = threading.Semaphore(2)
+# maximum run 2 threads parallel
+Timer.semaphore = threading.Semaphore(2)
 threads = []
 for i in range(1, 5):
     threads.append(
-        Timer(i, semaphore)
+        Timer(i)
     )
 
 for thread in threads:
