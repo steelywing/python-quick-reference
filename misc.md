@@ -40,6 +40,12 @@ with open('file.txt') as f:
 open('file.txt').readlines()
 ```
 
+## UTF-8 BOM File
+``` python
+with open('file.txt', 'w', encoding='utf-8-sig') as f:
+    f.write('This file has UTF-8 BOM header')
+```
+
 ## Input
 ``` python
 name = input("Name: ")
