@@ -71,9 +71,18 @@ tuple([1, 2, 3])
 
 ## Sets
 ``` python
-{1, 2, 3, 4}
-set([1, 2, 3, 2, 3, 4])
-# => {1, 2, 3, 4}
+set()                       # => set()
+{1, 2, 3, 4}                # => {1, 2, 3, 4}
+set([1, 2, 3, 2, 3, 4])     # => {1, 2, 3, 4}
+
+s = {1, 2, 3, 4}
+s.add(5)        # s = {1, 2, 3, 4, 5}
+s.pop()         # => 5, s = {1, 2, 3, 4}
+# will raise KeyError if element does not exist
+s.remove(2)     # s = {1, 3, 4}
+# will not raise KeyError if element does not exist
+s.discard(3)    # s = {1, 4}
+s.clear()       # s = set()
 
 'A' in {'A', 'B', 'C'}
 # => True
