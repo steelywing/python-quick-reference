@@ -86,6 +86,7 @@ foo(*args, **kw_args) # unpacking arguments
 ```
 
 Function Annotations
+
 ``` python
 def foo(arg: 'argument', kw_arg: 'keyword argument' = 'default') -> 'return annotation':
     pass
