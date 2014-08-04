@@ -37,4 +37,8 @@ x >> n      # shifted right by n bits
 from numbers import Number
 def is_number(n):
     return isinstance(n, Number)
+
+is_number(1)    # => True
+is_number(1.2)  # => True
+is_number('1')  # => False
 ```

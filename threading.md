@@ -154,11 +154,14 @@ lock.acquire()
 threading.Thread(
     target=lock_print, 
     args=(lock, 'this is wait until lock is released'), 
-    daemon=False
 ).start()
 
+# make some delay to make sure lock_print is waiting for lock
 time.sleep(2)
 
 print('lock released')
 lock.release()
+
+# lock released
+# this is wait until lock is released
 ```
