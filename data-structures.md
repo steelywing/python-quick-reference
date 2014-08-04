@@ -90,26 +90,26 @@ s.clear()       # s = set()
 'D' not in {'A', 'B', 'C'}
 # => True
 
+{1, 2}.union({2, 3})                # is same as
 {1, 2} | {2, 3}
-{1, 2}.union({2, 3})
 # => {1, 2, 3}
 
+{1, 2}.intersection({2, 3})         # is same as
 {1, 2} & {2, 3}
-{1, 2}.intersection({2, 3})
 # => {2}
 
+{1, 2}.difference({2, 3})           # is same as
 {1, 2} - {2, 3}
-{1, 2}.difference({2, 3})
 # => {1}
 
+{1, 2}.symmetric_difference({2, 3}) # is same as
 {1, 2} ^ {2, 3}
-{1, 2}.symmetric_difference({2, 3})
 # => {1, 3}
 
-{1, 2}.isdisjoint({3, 4}) # no common elements
+{1, 2}.isdisjoint({3, 4})           # no common elements
 # => True
 
-{1, 2}.issubset({1, 2, 3})
+{1, 2}.issubset({1, 2, 3})          # is same as
 {1, 2} <= {1, 2, 3}
 {1, 2} <= {1, 2}
 # => True
@@ -120,7 +120,7 @@ s.clear()       # s = set()
 {1, 2} < {1, 2}
 # => False
 
-{1, 2, 3}.issuperset({1, 2})
+{1, 2, 3}.issuperset({1, 2})        # is same as
 {1, 2, 3} >= {1, 2}
 {1, 2} >= {1, 2}
 # => True
@@ -131,7 +131,7 @@ s.clear()       # s = set()
 {1, 2} > {1, 2}
 # => False
 
-{1, 2, 3}.copy() # shallow copy
+{1, 2, 3}.copy()                    # shallow copy
 # => {1, 2, 3}
 ```
 
