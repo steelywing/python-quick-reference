@@ -121,3 +121,44 @@ for thread in threads:
     input('press enter to end thread {}\n'.format(thread.name))
     thread.end = True
 ```
+
+## Lock
+``` python
+import threading
+
+lock = threading.Lock()
+
+with lock:
+    pass
+
+# is same as
+
+lock.acquire()
+try:
+    pass
+finally:
+    lock.release()
+```
+
+``` python
+import threading
+import time
+
+def lock_print(lock, message):
+    with lock:
+        print(message)
+
+lock = threading.Lock()
+lock.acquire()
+
+threading.Thread(
+    target=lock_print, 
+    args=(lock, 'this is wait until lock is released'), 
+    daemon=False
+).start()
+
+time.sleep(2)
+
+print('lock released')
+lock.release()
+```
