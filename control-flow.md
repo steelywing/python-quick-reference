@@ -62,7 +62,7 @@ for i in range(10, 20, 2):
 # 10 12 14 16 18
 ```
 
-## Functions
+## Function
 ``` python
 def foo(arg, kw_arg='default', *args, **kw_args):
     """Documentation"""
@@ -85,7 +85,7 @@ foo(*args, **kw_args) # unpacking arguments
 # => ('arg', 'kw_arg', ('arbitrary', 'argument'), {'a': 1, 'b': 2})
 ```
 
-Function Annotations
+Function Annotation
 
 ``` python
 def foo(arg: 'argument', kw_arg: 'keyword argument' = 'default') -> 'return annotation':
@@ -101,4 +101,3 @@ double = lambda n: n*2
 double(12)
 # => 24
 ```
-

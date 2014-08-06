@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Strings
-# permalink: /strings/
+title: String
+# permalink: /string/
 weight: 1
 ---
-## Strings
+## String
 ``` python
 "string\n" == 'string\n'    # => True
 r'raw \n string'            # => 'raw \\n string'

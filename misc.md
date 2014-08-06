@@ -98,30 +98,6 @@ else:
 finally:
     pass
 
-Object-oriented programming
-
-class Person:
-    ID = 0                            # zmienna statyczna
-    def __init__(self, name, age=0):
-        self.name = name
-        self.age  = age
-    def lastName(self):
-        return self.name.split()[-1]
-    def __str__(self):
-        return "{}({},{})".format(self.__class__.__name__,
-                                  self.name, self.age)
-
-class Worker(Person):
-    def __init__(self, name, position, age=0):
-        super().__init__(name, age)
-        self.position = position
-    def __str__(self):
-        return "{}({},{},{})".format(self.__class__.__name__,
-                                   self.name, self.position, self.age)
-
-bob = Worker("Bob Smith", "developer", 25)
-print(bob)
-
 Useful APIs
 
 Queues:

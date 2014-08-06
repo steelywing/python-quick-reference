@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Numbers
-# permalink: /numbers/
+title: Number
+# permalink: /number/
 weight: 1
 ---
-## Operations
+## Operation
 ``` python
 1 + 1       # => 2
 2 - 1       # => 1
@@ -22,7 +22,7 @@ int(1.2)    # => 1
 float(1)    # => 1.0
 ```
 
-## Bitwise Operations
+## Bitwise Operation
 ``` python
 ~x          # inverted
 x | y       # or

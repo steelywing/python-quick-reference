@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Operators and Delimiters
-# permalink: /operators/
+# permalink: /operator/
 weight: 1
 # links:
   # - text: Numbers

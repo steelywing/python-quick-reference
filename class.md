@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Classes
-# permalink: /classes/
+title: Class
+# permalink: /class/
 weight: 1
 ---
-### Attributes and methods
+### Attribute and method
 ``` python
 class BaseClass:
 	pass
@@ -62,7 +62,7 @@ foo._Foo__data          # => 'Private instance attribute = FooBar'
 foo._Foo__get_data()    # => 'Private instance attribute = FooBar'
 ```
 
-### Descriptors
+### Descriptor
 ``` python
 class SquareArea:
     def __get__(self, instance, owner):

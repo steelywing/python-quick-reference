@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Data Structures
-# permalink: /data-structures/
+title: Data Structure
+# permalink: /data-structure/
 weight: 1
 ---
-## Lists
+## List
 ``` python
 array = ['A', 'B', 'C', 'D']
 
@@ -40,7 +40,7 @@ for i, v in enumerate(['A', 'B', 'C']):
 # 0 A, 1 B, 2 C, 
 ```
 
-## List Comprehensions
+## List Comprehension
 ``` python
 [n for n in range(4)]
 # => [0, 1, 2, 3]
@@ -61,7 +61,7 @@ for n in range(8):
 # array = [0, 4, 8, 12]
 ```
 
-## Tuples (Immutable Lists)
+## Tuple (Immutable List)
 ``` python
 tuple([1, 2, 3])
 (1, 2, 3)
@@ -69,7 +69,7 @@ tuple([1, 2, 3])
 ()
 ```
 
-## Sets
+## Set
 ``` python
 set()                       # => set()
 {1, 2, 3, 4}                # => {1, 2, 3, 4}
@@ -135,13 +135,13 @@ s.clear()       # s = set()
 # => {1, 2, 3}
 ```
 
-## Frozensets (Immutable Sets)
+## Frozenset (Immutable Set)
 ``` python
 frozenset([1, 2, 3, 2, 3, 4])
 # => frozenset({1, 2, 3, 4})
 ```
 
-## Dictionaries
+## Dictionary
 ``` python
 {'a': 1, 'b': 2}
 dict(a=1, b=2)
