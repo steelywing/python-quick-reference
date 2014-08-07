@@ -150,18 +150,20 @@ def lock_print(lock, message):
 
 lock = threading.Lock()
 lock.acquire()
+print('locked')
 
 threading.Thread(
     target=lock_print, 
     args=(lock, 'this is wait until lock is released'), 
 ).start()
 
-# make some delay to make sure lock_print is waiting for lock
+# wait a second to confirm that lock_print is waiting for lock
 time.sleep(2)
 
 print('lock released')
 lock.release()
 
+# locked
 # lock released
 # this is wait until lock is released
 ```

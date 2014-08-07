@@ -11,44 +11,9 @@ from subprocess import call
 call(['dir', '/w'], shell=True)
 ```
 
-## File
-``` python
-# r     reading (default)
-# w     writing (truncating)
-# r+    reading and writing
-# t     text (default)
-# b     binary
-# x     exclusive creation, failing if the file already exists
-
-with open('file.txt', 'w') as f:
-    f.write('File Content')
-```
-is same as
-``` python
-f = open('file.txt', 'w')
-try:
-    f.write("File Content")
-finally:
-    f.close()
-```
-
-``` python
-with open('file.txt') as f:
-    for line in f:
-        print(line)
-
-open('file.txt').readlines()
-```
-
-## UTF-8 BOM File
-``` python
-with open('file.txt', 'w', encoding='utf-8-sig') as f:
-    f.write('This file has UTF-8 BOM header')
-```
-
 ## Input
 ``` python
-name = input("Name: ")
+name = input("Name:")
 print('Hello {} !'.format(name))
 ```
 
@@ -61,25 +26,31 @@ print("Hello")
 x = buf.getvalue()
 ```
 
-## Error output stream
+## Output
 ``` python
+import sys
+# output error
 print('Error', file=sys.stderr)
+
+# change standard output
+sys.stdout = open('output.log', 'w')
 ```
 
-Other file operations:
+## _ _ name _ _
+``` python
+# the fully-qualified name of the module
 
-os.rename(from, to)                  os.remove(path)
-os.chmod(file, 0700)                 os.stat(file)
+# if running in the main scope
+__name__    # => '__main__'
 
-Special names
+# if running in module 'utils.py'
+__name__    # => 'utils'
 
-__name__
-    name of the file being run not imported
-
-Typical usage:
-
-if __name__ == "__main__":
-    print("Do something)
+# typical usage
+if __name__ == '__main__':
+    # execute only if run as a main script
+    pass
+```
 
 Exceptions
 
@@ -97,14 +68,9 @@ else:
     pass
 finally:
     pass
+```
 
 Useful APIs
-
-Queues:
-
-Q = collections.deque([10,20,30])
-Q.append(40)
-Q.popleft()
 
 Pickling:
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Operators and Delimiters
+title: Operator and Delimiter
 # permalink: /operator/
 weight: 1
 # links:

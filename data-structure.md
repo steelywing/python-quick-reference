@@ -21,18 +21,18 @@ array.index('B')    # => 1 (return index of the first match)
 
 ['A', 'B'] + ['C', 'D']     # => ['A', 'B', 'C', 'D']
 ['A', 'B'] * 2              # => ['A', 'B', 'A', 'B']
-array[0:3] = ['E', 'F']     # array = ['E', 'F', 'D'] (splice)
-array.append('G')           # array = ['E', 'F', 'D', 'G']
-array.insert(1, 'H')        # array = ['E', 'H', 'F', 'D', 'G']
-del array[0]                # array = ['H', 'F', 'D', 'G'] (remove)
-del array[1:3]              # array = ['H', 'G']
-array.extend(['H', 'I'])    # array = ['H', 'G', 'H', 'I']
-array.remove('H')           # array = ['G', 'H', 'I'] (remove first matching item)
-array.pop()                 # => 'I', array = ['G', 'H']
+array[0:3] = ['E', 'F']     # array => ['E', 'F', 'D'] (splice)
+array.append('G')           # array => ['E', 'F', 'D', 'G']
+array.insert(1, 'H')        # array => ['E', 'H', 'F', 'D', 'G']
+del array[0]                # array => ['H', 'F', 'D', 'G'] (remove)
+del array[1:3]              # array => ['H', 'G']
+array.extend(['H', 'I'])    # array => ['H', 'G', 'H', 'I']
+array.remove('H')           # array => ['G', 'H', 'I'] (remove first matching item)
+array.pop()                 # => 'I', array => ['G', 'H']
 
 array = [6, 4, 8, 2]
-array.sort()                        # array = [2, 4, 6, 8]
-array.reverse()                     # array = [8, 6, 4, 2]
+array.sort()                        # array => [2, 4, 6, 8]
+array.reverse()                     # array => [8, 6, 4, 2]
 list(enumerate(['A', 'B', 'C']))    # => [(0, 'A'), (1, 'B'), (2, 'C')]
 
 for i, v in enumerate(['A', 'B', 'C']):
@@ -48,7 +48,7 @@ for i, v in enumerate(['A', 'B', 'C']):
 
 ``` python
 array = [n*2 for n in range(8) if n%2 == 0]
-# array = [0, 4, 8, 12]
+# array => [0, 4, 8, 12]
 ```
 
 is same as
@@ -58,7 +58,7 @@ array = []
 for n in range(8):
     if n%2 == 0:
         array.append(n*2)
-# array = [0, 4, 8, 12]
+# array => [0, 4, 8, 12]
 ```
 
 ## Tuple (Immutable List)
@@ -76,13 +76,13 @@ set()                       # => set()
 set([1, 2, 3, 2, 3, 4])     # => {1, 2, 3, 4}
 
 s = {1, 2, 3, 4}
-s.add(5)        # s = {1, 2, 3, 4, 5}
-s.pop()         # => 5, s = {1, 2, 3, 4}
+s.add(5)        # s => {1, 2, 3, 4, 5}
+s.pop()         # => 5, s => {1, 2, 3, 4}
 # will raise KeyError if element does not exist
-s.remove(2)     # s = {1, 3, 4}
+s.remove(2)     # s => {1, 3, 4}
 # will not raise KeyError if element does not exist
-s.discard(3)    # s = {1, 4}
-s.clear()       # s = set()
+s.discard(3)    # s => {1, 4}
+s.clear()       # s => set()
 
 'A' in {'A', 'B', 'C'}
 # => True
