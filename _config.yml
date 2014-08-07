@@ -11,3 +11,5 @@ highlighter: pygments
 # permalink: pretty
 redcarpet:
   extensions: [with_toc_data, tables]
+gems:
+  - jekyll-sitemap
