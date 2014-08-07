@@ -37,9 +37,8 @@ sys.stdout = open('output.log', 'w')
 ```
 
 ## _ _ name _ _
+the fully-qualified name of the module
 ``` python
-# the fully-qualified name of the module
-
 # if running in the main scope
 __name__    # => '__main__'
 
@@ -52,8 +51,8 @@ if __name__ == '__main__':
     pass
 ```
 
-Exceptions
-
+## Exception
+``` python
 import sys
 
 try:
@@ -69,15 +68,6 @@ else:
 finally:
     pass
 ```
-
-Useful APIs
-
-Pickling:
-
-f = open("myobj.dat", "w")
-pickle.dump(x, f)
-f = open("myobj.dat", "r")
-x = pickle.load(f)
 
 Databases:
 
