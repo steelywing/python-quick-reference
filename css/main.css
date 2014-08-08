@@ -1,31 +1,15 @@
 body {
     /* padding-top: 50px; */
+    padding-top: 1.66em;
 }
 
-header .navbar {
-    margin: 0;
-}
-
-header .navbar-inverse {
-    background-color: #45355f;
-}
-
-header .navbar-inverse .navbar-brand,
-header .navbar-inverse .navbar-nav > li > a {
-    color: #ebdfff;
+.ui.fixed.menu {
+    top: 0;
+    z-index: 1000;
 }
 
 footer {
     padding: 1em;
-}
-
-.jumbotron {
-    background-color: #6f5499;
-    color: #fff;
-}
-
-.affix {
-    position: relative;
 }
 
 .highlight {
@@ -34,11 +18,4 @@ footer {
 
 .highlight pre {
     background-color: transparent;
-}
-
-@media (min-width: 992px) {
-    .affix {
-        position: fixed;
-        top: 20px;
-    }
 }

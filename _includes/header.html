@@ -1,39 +1,22 @@
 <header>
 
-  <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <i class="icon-bar"></i>
-          <i class="icon-bar"></i>
-          <i class="icon-bar"></i>
-        </button>
-        <a class="navbar-brand" href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a>
-      </div>
+  <div class="ui fixed menu">
+    {% for weight in (0..9) %}
+      {% for page in site.pages %}
+        {% if weight == page.weight %}
+          <a class="item" href="{{ page.url | prepend: site.baseurl }}">
+            {{ page.title }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
 
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          {% for weight in (0..9) %}
-            {% for page in site.pages %}
-              {% if weight == page.weight %}
-                <li>
-                  <a href="{{ page.url | prepend: site.baseurl }}">
-                    {{ page.title }}
-                  </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
+<!--   
   <div class="jumbotron">
     <div class="container">
       <h1>{{ page.title }}</h1>
     </div>
   </div>
-  
+-->  
 </header>

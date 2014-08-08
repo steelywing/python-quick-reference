@@ -7,7 +7,9 @@ url: "http://steelywing.github.io"
 
 # Build settings
 markdown: redcarpet
-highlighter: pygments
+# highlighter: ~
+highlighter: rouge
+# highlighter: pygments
 # permalink: pretty
 redcarpet:
   extensions: [with_toc_data, tables]

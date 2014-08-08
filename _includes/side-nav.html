@@ -1,9 +1,7 @@
-<div class="side-nav">
-  <ul class="nav nav-pills nav-stacked">
-    {% for link in page.links %}
-      <li><a href="{{ link.link }}">
-        {{ link.text }}
-      </a></li>
-    {% endfor %}
-  </ul>
+<div class="ui large vertical inverted labeled icon sidebar menu active">
+  {% for link in page.links %}
+    <a class="item" href="{{ link.link }}">
+      {{ link.text }}
+    </a>
+  {% endfor %}
 </div>
