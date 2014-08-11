@@ -1,0 +1,21 @@
+<div class="sidebar bs-docs-sidebar">
+  <input class="form-control" placeholder="Search... not working yet :(" type="text">
+  <ul class="nav bs-docs-sidenav">
+    {% for weight in (0..9) %}
+      {% for pg in site.pages %}
+        {% if weight == pg.weight %}
+          <li class="{% if pg.url == page.url %}active{% endif %}">
+            <a href="{{ pg.url | prepend: site.baseurl }}">
+              {{ pg.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    <!-- {% for link in page.links %}
+      <a href="{{ link.link }}">
+        {{ link.text }}
+      </a>
+    {% endfor %} -->
+  </div>
+</div>

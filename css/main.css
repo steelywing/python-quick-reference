@@ -1,15 +1,53 @@
 body {
-    /* padding-top: 50px; */
-    padding-top: 1.66em;
+    padding-top: 50px;
+    /* padding-top: 2.66em; */
+    padding-left: 275px;
 }
 
-.ui.fixed.menu {
-    top: 0;
-    z-index: 1000;
+.navbar {
+    margin: 0;
+}
+
+.navbar-inverse {
+    background-color: #6F5499;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav > li > a {
+    color: #ebdfff;
+}
+
+.sidebar {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    width: 275px;
+    overflow: auto;
+    padding: 1em;
+}
+
+#content {
+    background-color: #f9f9f9;
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 275px;
+    right: 0;
+    overflow: auto;
 }
 
 footer {
     padding: 1em;
+}
+
+.jumbotron {
+    background-color: #6f5499;
+    color: #fff;
+}
+
+.affix {
+    position: relative;
 }
 
 .highlight {
