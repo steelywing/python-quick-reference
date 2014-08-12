@@ -8,16 +8,7 @@
             <a href="{{ pg.url | prepend: site.baseurl }}">
               {{ pg.title }}
             </a>
-            <ul class="nav">
-              <!-- Custom link -->
-              {% for link in pg.links %}
-                <li>
-                  <a href="{{ link.link }}">
-                    {{ link.text }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
+            <ul class="nav"></ul>
           </li>
         {% endif %}
       {% endfor %}

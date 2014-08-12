@@ -3,9 +3,6 @@ layout: page
 title: Operator and Delimiter
 # permalink: /operator/
 weight: 1
-links:
-  - text: Assignment
-    link: '#assignment'
 ---
 ## Assignment
 ``` python
