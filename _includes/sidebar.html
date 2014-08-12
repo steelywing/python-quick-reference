@@ -3,7 +3,30 @@
   <ul class="nav bs-docs-sidenav">
     {% for weight in (0..9) %}
       {% for pg in site.pages %}
-        {% if weight == pg.weight %}
+        {% if weight == pg.weight and pg.title %}
+          <li class="{% if pg.url == page.url %}active{% endif %}">
+            <a href="{{ pg.url | prepend: site.baseurl }}">
+              {{ pg.title }}
+            </a>
+            <ul class="nav">
+              <!-- Custom link -->
+              {% for link in pg.links %}
+                <li>
+                  <a href="{{ link.link }}">
+                    {{ link.text }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    
+    <!-- Page of non-weight -->
+    {% for pg in site.pages %}
+      {% unless pg.weight %}
+        {% if pg.title and pg.url != '/index.html' %}
           <li class="{% if pg.url == page.url %}active{% endif %}">
             <a href="{{ pg.url | prepend: site.baseurl }}">
               {{ pg.title }}
@@ -11,12 +34,7 @@
             <ul class="nav"></ul>
           </li>
         {% endif %}
-      {% endfor %}
+      {% endunless %}
     {% endfor %}
-    <!-- {% for link in page.links %}
-      <a href="{{ link.link }}">
-        {{ link.text }}
-      </a>
-    {% endfor %} -->
   </div>
 </div>
