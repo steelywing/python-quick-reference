@@ -3,9 +3,9 @@ layout: page
 title: Operator and Delimiter
 # permalink: /operator/
 weight: 1
-# links:
-  # - text: Numbers
-    # link: '#numbers'
+links:
+  - text: Assignment
+    link: '#assignment'
 ---
 ## Assignment
 ``` python
@@ -21,4 +21,3 @@ a += 1
 # is same as
 1 < 2 and 2 < 3     # => True
 ```
-

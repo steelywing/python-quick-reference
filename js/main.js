@@ -25,20 +25,14 @@ $(function () {
     /*
      * create sidebar nav items
      */
-    $('#content').find('h2, h3, h4').each(function () {
-        var $sidebar = $('.bs-docs-sidenav'),
-            $active = $sidebar.find('.active'),
+    $('#content').find('h1, h2, h3, h4').each(function () {
+        var $nav = $('.bs-docs-sidenav .active .nav'),
             $a = $('<a>', {
                 'text': $(this).text(),
                 'href': '#' + this.id
             });
-        $active.append(
-            $('<ul class="nav">').append(
-                $('<li>').append($a)
-            )
+        $nav.append(
+            $('<li>').append($a)
         );
-    });
-    $('.bs-docs-sidebar').on('click', 'li', function () {
-        // $(this).toggleClass('active');
     });
 });

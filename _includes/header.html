@@ -8,7 +8,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Python 3 Quick Reference</a>
+      <a class="navbar-brand" href="{{ '/' | prepend: site.baseurl }}">
+        Python 3 Quick Reference
+      </a>
     </div>
 
     <div class="collapse navbar-collapse">
@@ -27,7 +29,7 @@
       </ul> -->
       <ul class="nav navbar-nav pull-right">
         <li>
-          <a href="#">About</a>
+          <a href="{{ '/about/' | prepend: site.baseurl }}">About</a>
         </li>
       </ul>
     </div>
