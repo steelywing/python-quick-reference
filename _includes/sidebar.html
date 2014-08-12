@@ -1,31 +1,18 @@
-<div class="sidebar bs-docs-sidebar">
-  <!-- <input class="form-control" placeholder="Search... not working yet :(" type="text"> -->
+{% raw %}
+<div class="sidebar bs-docs-sidebar" ng-controller="SidebarController">
+  <input id="search" 
+    ng-model="search"
+    class="form-control" 
+    placeholder="Search..." 
+    type="text">
   <ul class="nav bs-docs-sidenav">
-    {% for weight in (0..9) %}
-      {% for pg in site.pages %}
-        {% if weight == pg.weight and pg.title %}
-          <li class="{% if pg.url == page.url %}active{% endif %}">
-            <a href="{{ pg.url | prepend: site.baseurl }}">
-              {{ pg.title }}
-            </a>
-            <ul class="nav"></ul>
-          </li>
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-    
-    <!-- Page of non-weight -->
-    {% for pg in site.pages %}
-      {% unless pg.weight %}
-        {% if pg.title and pg.url != '/index.html' %}
-          <li class="{% if pg.url == page.url %}active{% endif %}">
-            <a href="{{ pg.url | prepend: site.baseurl }}">
-              {{ pg.title }}
-            </a>
-            <ul class="nav"></ul>
-          </li>
-        {% endif %}
-      {% endunless %}
-    {% endfor %}
-  </div>
+    <li ng-repeat="page in pages | orderBy:'weight' | filter:search " class="{{ page.active }}">
+      <a href="" 
+        ng-bind-template="{{ page.title }}" 
+        ng-click="view(page.url)">
+      </a>
+      <ul class="nav"></ul>
+    </li>
+  </ul>
 </div>
+{% endraw %}

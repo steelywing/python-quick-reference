@@ -1,0 +1,14 @@
+---
+layout: none
+---
+[
+    {% for pg in site.pages %}
+        {% if pg.title and pg.url != '/index.html' %}
+            {
+                "title": {{ pg.title | jsonify }},
+                "url": {{ pg.url | prepend: site.baseurl | jsonify }},
+                "weight": {{ pg.weight | jsonify }}
+            }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+    {% endfor %}
+]

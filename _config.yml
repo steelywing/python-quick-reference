@@ -1,16 +1,21 @@
 # Site settings
-title: Python 3
-# email: your-email@domain.com
-description: "A python quick reference."
+title: Python 3 Quick Reference
+email: steely.wing@gmail.com
+description: Python 3 quick reference.
 baseurl: "/python-quick-reference"
 url: "http://steelywing.github.io"
 
 # Build settings
 markdown: redcarpet
 # highlighter: ~
-# highlighter: rouge
-highlighter: pygments
+highlighter: rouge
+# highlighter: pygments
 # permalink: pretty
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: ~
 redcarpet:
   extensions: [with_toc_data, tables]
 gems:

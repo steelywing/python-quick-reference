@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Control Flow
 # permalink: /control-flow/
 weight: 1

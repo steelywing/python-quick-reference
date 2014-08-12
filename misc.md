@@ -1,5 +1,5 @@
 ---
-layout: page
+# layout: page
 title: Misc
 # permalink: /misc/
 weight: 8

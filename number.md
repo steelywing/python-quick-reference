@@ -1,5 +1,5 @@
 ---
-layout: page
+# layout: page
 title: Number
 # permalink: /number/
 weight: 1

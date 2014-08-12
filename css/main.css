@@ -4,6 +4,10 @@ body {
     padding-left: 275px;
 }
 
+#search {
+    margin-top: 1em;
+}
+
 .navbar {
     margin: 0;
     box-shadow: 0 0 8px rgba(62, 41, 95, .5);
@@ -18,7 +22,7 @@ body {
     color: #ebdfff;
 }
 
-#content, .sidebar {
+#container-content, .sidebar {
     background-color: #f5f5f5;
     position: fixed;
     top: 50px;
@@ -32,7 +36,7 @@ body {
     overflow-y: auto;
 }
 
-#content {
+#container-content {
     left: 275px;
     right: 0;
     overflow-y: scroll;

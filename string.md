@@ -1,5 +1,5 @@
 ---
-layout: page
+# layout: page
 title: String
 # permalink: /string/
 weight: 1

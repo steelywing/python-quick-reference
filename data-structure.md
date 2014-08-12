@@ -1,5 +1,5 @@
 ---
-layout: page
+# layout: page
 title: Data Structure
 # permalink: /data-structure/
 weight: 1

@@ -20,19 +20,3 @@
         }
     }
 }());
-
-$(function () {
-    /*
-     * create sidebar nav items
-     */
-    $('#content').find('h1, h2, h3, h4').each(function () {
-        var $nav = $('.bs-docs-sidenav .active .nav'),
-            $a = $('<a>', {
-                'text': $(this).text(),
-                'href': '#' + this.id
-            });
-        $nav.append(
-            $('<li>').append($a)
-        );
-    });
-});
