@@ -1,13 +1,12 @@
 var app = angular.module('app', ['ngRoute']);
 
 app.config(
-    function ($routeProvider, $locationProvider) {
+    function($routeProvider, $locationProvider) {
         $routeProvider
             .when(':url*', {
-                templateUrl: function (path) {
+                templateUrl: function(path) {
                     return path.url;
-                },
-                controller: 'ViewController'
+                }
             })
             .otherwise({
                 redirectTo: '/about/'
@@ -20,27 +19,37 @@ app.config(
 );
 
 app.run(
-    function ($rootScope, $location) {
-        $rootScope.view = function (url) {
-            $location.path(url);
+    function($rootScope, $location, $http) {
+        $rootScope.view = function(url, anchor) {
+            if (url) {
+                $location.path(url);
+            }
+            
+            if (anchor) {
+                $location.hash(anchor);
+            }
         };
+        
+        $rootScope.pages = {};
+        $http.get('pages.json').success(function(data) {
+            $rootScope.pages = data;
+        });
+
+        $rootScope.$on('$viewContentLoaded', function(e) {
+            var url = $location.path();
+            angular.forEach($rootScope.pages, function(page) {
+                if (page.url == url) {
+                    page.toc = $('[ng-view]')
+                        .children('h1, h2, h3, h4')
+                        .map(function() {
+                            return {
+                                title: $(this).text(),
+                                id: this.id
+                            };
+                        })
+                        .get();
+                }
+            });
+        });
     }
 );
-
-app.controller('SidebarController', function ($scope, $http, $location) {
-    $http.get('pages.json').success(function (data) {
-        $scope.pages = data;
-    });
-});
-
-app.controller('ViewController', function ($scope, $route, $routeParams) {
-    // $route.current.templateUrl = $routeParams.url;
-    
-    $scope.$on('$viewContentLoaded', function (e) {
-        console.log('loaded', e);
-    });
-    
-    $scope.onload = function () {
-        // $('> h1, > h2, > h3, > h4')
-    };
-});
