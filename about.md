@@ -4,9 +4,8 @@ title: About
 permalink: /about/
 # weight: 9
 ---
-## {{ site.title }}
 {{ site.description }}
-This is a tutorial, so will not explain how to use it, just remind you the syntax.
+This is not tutorial, so will not explain how to use it, just remind you the syntax.
 <hr>
 <p class="text-center">
     Jekyll template licensed under

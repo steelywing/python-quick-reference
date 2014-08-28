@@ -25,7 +25,7 @@ app.run(
                 $location.path(url);
             }
             
-            if (anchor) {
+            if (typeof anchor != 'undefined') {
                 $location.hash(anchor);
             }
         };
@@ -34,8 +34,9 @@ app.run(
             $rootScope.pages = data;
             angular.forEach(data, function(page) {
                 var $dom = $(page.content);
-                // console.log(dom);
+                // put all pages to cache
                 $templateCache.put(page.url, page.content);
+                // init TOC
                 page.toc = $dom
                     .filter('h1, h2, h3, h4')
                     .map(function() {

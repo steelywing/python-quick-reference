@@ -1,16 +1,18 @@
 {% raw %}
 <div class="sidebar bs-docs-sidebar">
-  <input id="filter" 
-    ng-model="filter"
+<!--
+  <input id="search" 
+    ng-model="search"
     class="form-control" 
-    placeholder="Filter" 
-    type="text">
+    placeholder="Search" 
+    type="search">
+-->
   <ul class="nav bs-docs-sidenav">
-    <li ng-repeat="page in pages | orderBy:'weight' | filter:filter" 
+    <li ng-repeat="page in pages | orderBy:'weight' | filter:search" 
       class="{{ page.active ? 'active' : '' }}">
       <a href="" 
         ng-bind-template="{{ page.title }}" 
-        ng-click="view(page.url); page.active = !page.active;">
+        ng-click="view(page.url, ''); page.active = !page.active;">
       </a>
       <ul class="nav">
         <li ng-repeat="anchor in page.toc | filter:search">

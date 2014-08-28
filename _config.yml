@@ -8,8 +8,8 @@ url: "http://steelywing.github.io"
 # Build settings
 markdown: redcarpet
 # highlighter: ~
-# highlighter: rouge
-highlighter: pygments
+highlighter: rouge
+# highlighter: pygments
 # permalink: pretty
 defaults:
   - scope:

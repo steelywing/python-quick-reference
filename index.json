@@ -3,13 +3,11 @@ layout: none
 ---
 [
     {% for page in site.collections.docs.docs %}
-        {% if page.title and page.url != '/index.html' %}
-            {
-                "title": {{ page.title | jsonify }},
-                "url": {{ page.url | prepend: site.baseurl | jsonify }},
-                "weight": {{ page.weight | jsonify }},
-                "content": {{ page.output | jsonify }}
-            }{% unless forloop.last %},{% endunless %}
-        {% endif %}
+        {
+            "title": {{ page.title | jsonify }},
+            "url": {{ page.url | jsonify }},
+            "weight": {{ page.weight | jsonify }},
+            "content": {{ page.output | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
     {% endfor %}
 ]
