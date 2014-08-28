@@ -19,7 +19,7 @@ app.config(
 );
 
 app.run(
-    function($rootScope, $location, $http) {
+    function($rootScope, $location, $http, $templateCache) {
         $rootScope.view = function(url, anchor) {
             if (url) {
                 $location.path(url);
@@ -30,25 +30,21 @@ app.run(
             }
         };
         
-        $rootScope.pages = {};
-        $http.get('pages.json').success(function(data) {
+        $http.get('index.json').success(function(data) {
             $rootScope.pages = data;
-        });
-
-        $rootScope.$on('$viewContentLoaded', function(e) {
-            var url = $location.path();
-            angular.forEach($rootScope.pages, function(page) {
-                if (page.url == url) {
-                    page.toc = $('[ng-view]')
-                        .children('h1, h2, h3, h4')
-                        .map(function() {
-                            return {
-                                title: $(this).text(),
-                                id: this.id
-                            };
-                        })
-                        .get();
-                }
+            angular.forEach(data, function(page) {
+                var $dom = $(page.content);
+                // console.log(dom);
+                $templateCache.put(page.url, page.content);
+                page.toc = $dom
+                    .filter('h1, h2, h3, h4')
+                    .map(function() {
+                        return {
+                            title: $(this).text(),
+                            id: this.id
+                        };
+                    })
+                    .get();
             });
         });
     }

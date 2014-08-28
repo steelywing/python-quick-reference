@@ -8,8 +8,8 @@ url: "http://steelywing.github.io"
 # Build settings
 markdown: redcarpet
 # highlighter: ~
-highlighter: rouge
-# highlighter: pygments
+# highlighter: rouge
+highlighter: pygments
 # permalink: pretty
 defaults:
   - scope:
@@ -20,3 +20,7 @@ redcarpet:
   extensions: [with_toc_data, tables]
 gems:
   - jekyll-sitemap
+
+collections:
+  docs:
+    output: false

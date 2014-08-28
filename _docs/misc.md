@@ -69,93 +69,102 @@ finally:
     pass
 ```
 
-Databases:
+## SQLite
+``` python
+import sqlite3
 
-conn = sqlite3.connect("data.db")
-c = conn.cursor()
-c.execute("SELECT * FROM employees")
-for row in c:
-    print(row[0])
-conn.commit()
-conn.close()
+db = sqlite3.connect('sqlite.db')
+cursor = db.cursor()
+cursor.execute('SELECT * FROM table')
+for row in cursor:
+    print(row)
+db.commit()
+db.close()
 
 db = shelve.open("file")
 db["x"] = y
 db.close()
+```
 
-CGI:
-
-form = cgi.FieldStorage()
-print("Content-type: text/html\n")
-print(cgi.escape(form["user"].value))
-
-HTTP Server:
-
-srvraddr = ("", 8080)                 # my hostname, portnumber
-srvrobj  = BaseHTTPServer.HTTPServer(srvraddr,
-                                     CGIHTTPServer.CGIHTTPRequestHandler)
-srvrobj.serve_forever()
-
-URLs:
-
+## URL
+``` python
 conn = urllib.urlopen("http://localhost:8080")
 reply = conn.read()
+```
 
-Environment
+## Environment
 
 Encoding:
-
+``` python
 #!/usr/bin/python3
 # -*- coding: latin-2 -*-
+```
 
 Windows - use .pyw extension to run the script (with GUI) without a console window.
 
 Paths:
-
+```
 PYTHONPATH
 export PYTHONSTARTUP=~/.pythonrc.py
+```
 
-Module sys:
+## Module
 
-sys.argv      sys.stdin       sys.stdout      sys.stderr
-sys.path      sys.platform    sys.version
+sys
 
-Processes (module subprocess):
+``` python
+sys.argv
+sys.stdin
+sys.stdout
+sys.stderr
+sys.path
+sys.platform
+sys.version
+```
 
-res = subprocess.call(["hostname","-f"], stderr=subprocess.DEVNULL)
-res = subprocess.call("ps axu | grep ^root", shell=True)
-output = subprocess.check_output(["mycmd", "myarg"],universal_newlines=True)
+os
 
-Module os:
-
-os.pathsep    os.sep          os.pardir       os.curdir       os.linesep
+``` python
+os.pathsep
+os.sep
+os.pardir
+os.curdir
+os.linesep
 os.startfile("index.html")
 os.popen("ps ax").readlines()
 os.listdir("/usr/local")              # ['bin', 'etc', ...]
 os.glob("*.txt")                      # ['test.txt', 'out.txt', ...]
+```
 
-Module os.path:
+os.path
 
+``` python
 os.path.split("/usr/bin/go.sh")       # ('/usr/bin', 'go.sh')
 os.path.join("/usr/bin", "go.sh")     # '/usr/bin/go.sh'
 os.path.splitext("/usr/bin/go.sh")    # ('/usr/bin/go', '.sh')
 os.path.abspath("../bin/go.sh")       # '/usr/bin/go.sh'
 os.path.isfile("go.sh")
+```
 
-Module os.environ:
+os.environ
 
+``` python
 os.environ.get("PYTHONSTARTUP")
+```
 
-Directories:
-
+## Directories
+``` python
+import os
 for (dir, subdirs, files) in os.walk("/tmp"):
-    for f in files: print(f)
+    for f in files:
+        print(f)
+```
 
-Functional programming
-
+## Functional programming
+``` python
 f = lambda x: x+10                    # creates an anonymous function
 f(5)                                  # returns 15
 L = [1, 4, 7]
 for x in filter(lambda i: i<5, L):    # returns [1, 4]
 for x in map(lambda: x: x*2, L):      # returns [2, 8, 14]
-
+```
