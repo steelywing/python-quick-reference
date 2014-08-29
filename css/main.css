@@ -3,9 +3,15 @@ body {
     /* padding-top: 2.66em; */
 }
 
-#search {
-    margin-top: 1em;
-    /* width: 100%; */
+#search-clear {
+    position: absolute;
+    right: 1em;
+    top: 0;
+    bottom: 0;
+    height: 1em;
+    margin: auto 0;
+    color: #ccc;
+    cursor: pointer;
 }
 
 .navbar {
@@ -64,6 +70,7 @@ footer {
     background-color: transparent;
 }
 
+/* always show subnav */
 .bs-docs-sidebar .nav > .active > .nav {
     display: block;
 }

@@ -1,11 +1,18 @@
 {% raw %}
 <div class="sidebar bs-docs-sidebar">
 
-  <input id="search" 
-    ng-model="search"
-    class="form-control" 
-    placeholder="Search" 
-    type="search">
+  <div class="btn-group" style="margin-top: 1em; width: 100%;">
+    <span id="search-clear" 
+      ng-click="search = '';" 
+      ng-hide="!search"
+      class="glyphicon glyphicon-remove">
+    </span>
+    <input id="search" 
+      ng-model="search"
+      class="form-control" 
+      placeholder="Search" 
+      type="search">
+  </div>
 
   <ul class="nav bs-docs-sidenav">
     <li ng-repeat="page in pages | orderBy:'weight' | filter:search" 
