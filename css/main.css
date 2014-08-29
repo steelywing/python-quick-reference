@@ -1,20 +1,14 @@
 body {
     padding-top: 50px;
     /* padding-top: 2.66em; */
-    padding-left: 275px;
-}
-
-#navbar-search {
-    width: 275px;
 }
 
 #search {
-    /* margin-top: 1em; */
-    width: 100%;
+    margin-top: 1em;
+    /* width: 100%; */
 }
 
 .navbar {
-    margin: 0;
     box-shadow: 0 0 8px rgba(62, 41, 95, .5);
 }
 
@@ -38,7 +32,7 @@ body {
     left: 0;
     width: 275px;
     overflow-y: auto;
-    background-color: #f5f5f5;
+    background-color: #f8f8f8;
 }
 
 #container-content {
@@ -68,4 +62,8 @@ footer {
 
 .highlight pre {
     background-color: transparent;
+}
+
+.bs-docs-sidebar .nav > .active > .nav {
+    display: block;
 }

@@ -1,12 +1,12 @@
 {% raw %}
 <div class="sidebar bs-docs-sidebar">
-<!--
+
   <input id="search" 
     ng-model="search"
     class="form-control" 
     placeholder="Search" 
     type="search">
--->
+
   <ul class="nav bs-docs-sidenav">
     <li ng-repeat="page in pages | orderBy:'weight' | filter:search" 
       class="{{ page.active ? 'active' : '' }}">
@@ -24,5 +24,6 @@
       </ul>
     </li>
   </ul>
+
 </div>
 {% endraw %}
